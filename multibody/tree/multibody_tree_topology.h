@@ -813,7 +813,10 @@ class MultibodyTreeTopology {
     // Count number of generalized positions and velocities.
     num_positions_ = 0;
     num_velocities_ = 0;
+    size_t count = 0;
+    std::cout << "Num positions" << std::endl;
     for (const auto& mobilizer : mobilizers_) {
+      std::cout << count << ": " << mobilizer.num_positions << std::endl;
       num_positions_ += mobilizer.num_positions;
       num_velocities_ += mobilizer.num_velocities;
     }
